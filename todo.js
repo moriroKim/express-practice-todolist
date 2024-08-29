@@ -5,40 +5,27 @@ const ul = document.querySelector('#todo-list');
 // Create => 서버에 Todo 추가할 때
 const createTodo = () => {
     const newTodo = todoInput.value;
-    return fetch('http://localhost:3000', {
-        method: 'POST',
-        body: newTodo,
-    })
-        .then((res) => res.text())
+    return axios
+        .post('http://localhost:3000', newTodo, {
+            headers: { 'Content-Type': 'text/plain' },
+        })
         .then((res) => console.log(res));
 };
 
 // Read => 서버에 Todo 정보를 가져올 때
 const readTodo = async () => {
-    const res = await fetch('http://localhost:3000');
-    const data = await res.json();
-    return data;
+    const res = await axios.get('http://localhost:3000');
+    return res.data;
 };
 
 // Update => 서버에 Todo 정보를 수정할 때
 const updateTodo = (newTodo) => {
-    return fetch('http://localhost:3000', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newTodo),
-    })
-        .then((res) => res.text())
-        .then((res) => console.log(res));
+    return axios.put('http://localhost:3000', newTodo);
 };
 
 // Delete => 서버에 Todo 정보를 삭제할 때
 const deleteTodo = (id) => {
-    return fetch('http://localhost:3000', {
-        method: 'DELETE',
-        body: id,
-    })
-        .then((res) => res.text())
-        .then((res) => console.log(res));
+    return axios.delete('http://localhost:3000', { data: id });
 };
 
 // 화면 그려주는 함수
