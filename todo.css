@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    background-color: rgb(214, 230, 228);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.todo-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: rgb(0, 115, 255);
+}
+
+#todo-input {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 0.4rem;
+}
+
+#todo-input input {
+    flex: 2;
+    outline: none;
+    padding: 1rem;
+    border: 2px solid rgb(0, 115, 255);
+    border-radius: 6px;
+}
+
+#todo-input input:focus {
+    border: 2px solid rgb(0, 255, 132);
+    border-radius: 6px;
+}
+
+#todo-input button {
+    flex: 1;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    background-color: rgb(0, 115, 255);
+    cursor: pointer;
+}
+
+#todo-input button:hover {
+    background-color: rgb(0, 83, 184);
+}
+
+#todo-list {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.067);
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#todo-list li {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
